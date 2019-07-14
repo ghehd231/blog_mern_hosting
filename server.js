@@ -13,6 +13,17 @@ app.use('/api/user', userRouter);
 app.use('/api/profile', profileRouter);
 app.use('/api/post', postRouter);
 
+/**
+ * @database   mongoose
+ * @desc    blog_mern 
+ * @access  Public
+ */
+const db = require('./config/keys').mongoURI;
+mongoose.Promise = global.Promise;
+mongoose.connect(db, { userNewUrlParser: true, userCreateIndex: true})
+    .then( () => console.log('MongoDb Connected..'))
+    .catch(err => console.log('err'));
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`server running on port ${port}`)); 

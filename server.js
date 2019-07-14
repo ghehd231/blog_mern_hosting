@@ -13,7 +13,6 @@ app.use('/api/user', userRouter);
 app.use('/api/profile', profileRouter);
 app.use('/api/post', postRouter);
 
-<<<<<<< HEAD
 /**
  * @database   mongoose
  * @desc    blog_mern 
@@ -25,8 +24,6 @@ mongoose.connect(db, { userNewUrlParser: true, userCreateIndex: true})
     .then( () => console.log('MongoDb Connected..'))
     .catch(err => console.log('err'));
 
-=======
->>>>>>> master
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`server running on port ${port}`)); 
